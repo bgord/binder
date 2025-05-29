@@ -10,6 +10,8 @@ import { timing } from "hono/timing";
 import * as App from "./app";
 import * as infra from "./infra";
 
+import * as PDFGenerator from "./modules/generator";
+
 type Env = {
   Variables: infra.Variables;
   startup: bgn.Stopwatch;
@@ -39,6 +41,10 @@ server.get(
   infra.BasicAuthShield,
   ...bgb.Healthcheck.build(infra.healthcheck),
 );
+// =============================
+
+// PDF generator
+server.post("/generate-pdf", PDFGenerator.Routes.GeneratePDF);
 // =============================
 
 server.onError(App.Routes.ErrorHandler.handle);
