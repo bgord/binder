@@ -1,5 +1,5 @@
 import * as bg from "@bgord/node";
-import z from "zod";
+import z from "zod/v4";
 
 const EnvironmentSchema = z
   .object({
