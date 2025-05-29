@@ -27,8 +27,6 @@ export const BasicAuthShield = basicAuth({
   password: Env.BASIC_AUTH_PASSWORD,
 });
 
-export const ApiKeyShield = new bgb.ApiKeyShield({ API_KEY: Env.API_KEY });
-
 export const prerequisites = [
   new bgn.PrerequisitePort({ label: "port", port: Env.PORT }),
   new bgn.PrerequisiteTimezoneUTC({ label: "timezone", timezone: Env.TZ }),

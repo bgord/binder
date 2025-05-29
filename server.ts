@@ -2,7 +2,6 @@ import * as bgb from "@bgord/bun";
 import * as bgn from "@bgord/node";
 import { Hono } from "hono";
 import { bodyLimit } from "hono/body-limit";
-import { serveStatic } from "hono/bun";
 import { cors } from "hono/cors";
 import { requestId } from "hono/request-id";
 import { secureHeaders } from "hono/secure-headers";
@@ -10,7 +9,6 @@ import { timeout } from "hono/timeout";
 import { timing } from "hono/timing";
 import * as App from "./app";
 import * as infra from "./infra";
-import * as Mailer from "./modules/mailer";
 
 type Env = {
   Variables: infra.Variables;
@@ -31,8 +29,6 @@ server.use(bgb.ETagExtractor.attach);
 server.use(bgb.HttpLogger.build(infra.logger));
 server.use(timing());
 
-server.use("*", serveStatic({ root: "./static/" }));
-
 const startup = new bgn.Stopwatch();
 
 // Healthcheck =================
@@ -42,16 +38,6 @@ server.get(
   timeout(bgn.Time.Seconds(15).ms, infra.requestTimeoutError),
   infra.BasicAuthShield,
   ...bgb.Healthcheck.build(infra.healthcheck),
-);
-// =============================
-
-// Mailer =================
-server.post(
-  "/notification-send",
-  bgb.rateLimitShield(bgn.Time.Seconds(5)),
-  timeout(bgn.Time.Seconds(15).ms, infra.requestTimeoutError),
-  infra.ApiKeyShield.verify,
-  Mailer.Routes.NotificationSend,
 );
 // =============================
 
