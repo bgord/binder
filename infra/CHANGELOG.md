@@ -1,0 +1,23 @@
+# Changelog
+- 2025-05-29 22:44 911f41f **step: setup generate pdf**
+- 2025-05-29 22:44 89a9071 **step: setup generate pdf test**
+- 2025-05-29 22:44 688a6cd **step: setup module**
+## 2025-05-29 22:44 
+- 2025-05-29 22:31 e979eef **step: update zod**
+- 2025-05-29 22:30 cb1415c **step: update bun**
+- 2025-05-29 21:25 bf8d5ad **step: update bgord-node**
+- 2025-05-29 20:55 ee3f848 **step: ensure the server starts**
+- 2025-05-29 20:49 0bd68cd **step: setup app directory**
+- 2025-05-29 20:48 f06e0ee **step: setup infra directory**
+- 2025-05-29 20:44 73abbed **step: setup index.ts**
+- 2025-05-29 20:44 2ea8809 **step: setup server.ts**
+- 2025-05-29 20:43 44891c8 **step: setup package.json**
+- 2025-05-29 20:43 2495db2 **step: install packages**
+- 2025-05-29 20:42 a319ab3 **step: add readme**
+- 2025-05-29 20:42 03133ac **step: setup tsconfig.json**
+- 2025-05-29 20:41 94f484e **step: add lefthook config**
+- 2025-05-29 20:40 0cca7a7 **step: setup github workflows and dependabot**
+- 2025-05-29 20:39 14d1aab **step: setup env files**
+- 2025-05-29 20:38 cb94cdc **step: setup gitignore**
+- 2025-05-29 20:35 d3cbeb4 **step: add bgord-scripts**
+- 2025-05-29 20:32 1609fa6 **step: add gitignore**
