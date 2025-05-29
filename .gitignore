@@ -1,1 +1,12 @@
-node_modules
+.contributor
+.cspellcache
+.env.local
+.env.test
+.env.production
+.env.staging
+.eslintcache
+build/
+node_modules/
+prisma/sqlite.db
+prisma/sqlite.db-journal
+tsconfig.tsbuildinfo
